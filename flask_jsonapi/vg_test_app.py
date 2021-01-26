@@ -2,10 +2,13 @@
 # - pip install flask
 # - python vg_test_app.py
 
+import json
 import flask
+from flask_cors import CORS
 from flask import request, jsonify
 
 app = flask.Flask(__name__)
+CORS(app)
 app.config["DEBUG"] = True
 
 
@@ -63,5 +66,11 @@ def api_id():
     # Use the jsonify function from Flask to convert our list of
     # Python dictionaries to the JSON format.
     return jsonify(results)
+
+@app.route('/api/v1/devices/all', methods=['GET'])
+def api_devices_all():
+    with open('data/devices.json') as f:
+        data = json.load(f)
+        return jsonify(data)
 
 app.run()
