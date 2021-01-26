@@ -1,0 +1,4 @@
+name Lisa
+designation Programmer
+age 30
+salary 9000
