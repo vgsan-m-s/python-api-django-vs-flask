@@ -1,0 +1,86 @@
+[
+    {
+        "device_id": 1,
+        "detections": [
+            {
+                "id": 11,
+                "name": "Mike Smith",
+                "status": "detected",
+                "attempt": [
+                    {
+                        "type": "access",
+                        "count": 9,
+                        "duration": "24h"
+                    },
+                    {
+                        "type": "app",
+                        "count": 93,
+                        "duration": "24h"
+                    },
+                    {
+                        "type": "web",
+                        "count": 132,
+                        "duration": "24h"
+                    }
+                ]
+            },
+            {
+                "id": 12,
+                "name": "Paul Lima",
+                "status": ""
+            },
+            {
+                "id": 13,
+                "name": "Lisa Roma",
+                "status": ""
+            },
+            {
+                "id": 14,
+                "name": "Elizabeth Moon",
+                "status": ""
+            }
+        ]
+    },
+    {
+        "device_id": 3,
+        "detections": [
+            {
+                "id": 31,
+                "name": "Mike Smith",
+                "status": "detected",
+                "attempt": [
+                    {
+                        "type": "access",
+                        "count": 9,
+                        "duration": "24h"
+                    },
+                    {
+                        "type": "app",
+                        "count": 93,
+                        "duration": "24h"
+                    },
+                    {
+                        "type": "web",
+                        "count": 132,
+                        "duration": "24h"
+                    }
+                ]
+            },
+            {
+                "id": 32,
+                "name": "Paul Lima",
+                "status": ""
+            },
+            {
+                "id": 33,
+                "name": "Lisa Roma",
+                "status": ""
+            },
+            {
+                "id": 34,
+                "name": "Elizabeth Moon",
+                "status": ""
+            }
+        ]
+    }
+]

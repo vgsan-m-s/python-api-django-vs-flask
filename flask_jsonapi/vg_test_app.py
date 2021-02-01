@@ -5,11 +5,11 @@
 import json
 import flask
 from flask_cors import CORS
-from flask import request, jsonify
+from flask import request, jsonify, send_file
 
 app = flask.Flask(__name__)
 CORS(app)
-app.config["DEBUG"] = True
+# app.config["DEBUG"] = True
 
 
 @app.route('/', methods=['GET'])
@@ -73,4 +73,28 @@ def api_devices_all():
         data = json.load(f)
         return jsonify(data)
 
-app.run()
+        
+@app.route('/api/v1/device/<int:device_id>/user_log/all', methods=['GET'])
+def api_device_user_log_all(device_id):
+    with open('data/device_user_log.json') as f:
+        data = json.load(f)
+        data = [x for x in data if x['device_id'] == device_id]
+        if len(data) > 0:
+            data = data[0]
+        else:
+            data = {}
+        return jsonify(data)
+
+@app.route('/api/v1/device/<int:device_id>/user_log/<int:user_log_id>/download')
+def downloadUserLog(device_id, user_log_id):
+    #For windows you need to use drive name [ex: F:/Example.pdf]
+    path = "data/device_user_log.json"
+    return send_file(path, as_attachment=True, attachment_filename=(str(device_id) + str(user_log_id) + '.json'))
+
+# @app.route('/uploads/<path:filename>', methods=['GET', 'POST'])
+# def download(filename):
+#     uploads = os.path.join(current_app.root_path, app.config['UPLOAD_FOLDER'])
+#     return send_from_directory(directory=uploads, filename=filename)
+
+#app.run()
+app.run(host="0.0.0.0")

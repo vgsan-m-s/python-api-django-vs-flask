@@ -1,13 +1,16 @@
 [
     {
+        "id": 1,
         "name": "DESKTOP-LABREMT-01",
         "status": "detected"
     },
     {
+        "id": 2,
         "name": "DESKTOP-LABREMT-02",
         "status": ""
     },
     {
+        "id": 3,
         "name": "DESKTOP-LABREMT-03",
         "status": "detected"
     }

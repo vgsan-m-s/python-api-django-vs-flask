@@ -4,9 +4,6 @@ python get-pip.py
 :: change directory
 cd ../flask_jsonapi/
 
-:: pip install
-pip install -r requirements.txt
-
 :: set virtual environment
 py -m venv env
 CALL env\Scripts\activate
